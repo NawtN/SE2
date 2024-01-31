@@ -1,1 +1,1 @@
-
+run: sonar-scanner -Dsonar.projectKey=NawtN -Dsonar.hostUrl=https://sonarcloud.io
