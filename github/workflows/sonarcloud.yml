@@ -1,0 +1,21 @@
+name: SonarCloud Analysis
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set SonarCloud token
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: echo "export SONAR_TOKEN=$SONAR_TOKEN" >> $GITHUB_ENV
+
+      - name: Run SonarScanner
+        run: sonar-scanner -Dsonar.projectKey=${NawtN} -Dsonar.hostUrl=https://sonarcloud.io
+
