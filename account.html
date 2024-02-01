@@ -25,7 +25,7 @@
   <!-- Performance API Polyfills -->
   <script>
   (function () {
-    var noop = function noop() {};
+    var noop = function noop();
     if ("performance" in window === false) {
       window.performance = {};
     }
